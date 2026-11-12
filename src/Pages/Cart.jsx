@@ -58,7 +58,7 @@ export default function Cart(){
                     )
                 })}
             </div>
-            <p>Total: {total}</p>
+            <p id="p">Total: {total}</p>
         </div>
     )
 }

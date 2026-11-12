@@ -12,10 +12,21 @@ export const context = createContext()
 function App() {
   const [count, setCount] = useState(0)
   const [store,setStore] = useState([])
-  // useEffect(function(){
-  //   localStorage.setItem('storing',JSON.stringify(store))
-  // },[store])
-
+  useEffect(function(){
+    if(store.length>0){
+      localStorage.setItem('storing',JSON.stringify(store))
+    }
+  },[store])
+  useEffect(function(){
+    const getting = JSON.parse(localStorage.getItem('storing'))
+    if(getting){
+      setStore(getting)
+    }else{
+      setStore([])
+    }
+    console.log('useefect store',store)
+    console.log('getting',getting)
+  },[])
   return (
     <>
       <context.Provider value={{store,setStore}}>

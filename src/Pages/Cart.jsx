@@ -4,16 +4,21 @@ export default function Cart(){
     const {store,setStore} = useContext(context)
     const [total,setTotal] = useState(0)
     function remove(e){
-        if(store.length > 0){
+        if(store.length > 1){
            const item = store.filter(function(res){
                 return(
                    res.id !== e.id
                 )
             })
+            console.log('mster item',item)
             setStore(item)
+            console.log('stor store haha',store)
             // controll()
             // setStore()
         }else{
+           setStore([])
+           localStorage.removeItem('storing')
+            // alert(store)
             alert("Empty")
         }
     }

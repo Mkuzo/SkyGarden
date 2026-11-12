@@ -9,6 +9,19 @@
   height: auto;
   background-color: gray;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  /* position: sticky;
+  top:70px; */
+}
+.nav-container{
+  width: 100%;
+  height: auto;
+  background-color: gray;
+  /* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  /* background-color: red; */
+  /* padding: 10px; */
 }
 .navigation{
   width: 97%;
@@ -141,6 +154,8 @@
   background-color: gainsboro;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
   margin-bottom: 10px;
+  /* position: sticky; */
+  /* top:30px; */
 }
 .nav{
   width: 97%;
@@ -282,9 +297,6 @@
 .product-text h1{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-.product-text button:hover{
-  border: 2px solid seagreen;
-}
 #p{
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   margin: 20px;
@@ -301,6 +313,11 @@
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   cursor: pointer;
   border: none;
+}
+.product-text button:hover{
+  border: 2px solid seagreen;
+  background-color: transparent;
+  color: black;
 }
 .product-card h1{
   font-size: 1.7rem;

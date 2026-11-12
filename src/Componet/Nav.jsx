@@ -20,8 +20,9 @@ export default function Nav(){
         navigate('/Cart')
     }
     return(
-        <div>
-            <div className="navigation-banner">
+        // <div>
+            <div className="nav-container">
+                <div className="navigation-banner">
                 <div className="nav">
                     <div className="nav-logo">
                         <h1>Sky Garden</h1>
@@ -70,6 +71,7 @@ export default function Nav(){
                     ""}
                 </div>
             </div>
-        </div>
+            </div>
+            // </div>
     )
 }

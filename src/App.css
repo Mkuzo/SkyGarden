@@ -319,13 +319,13 @@
   background-color: transparent;
   color: black;
 }
-body{
-  overflow: hidden;
-}
 .slider{
   width: 100vw;
   height: auto;
   /* background-color: red; */
+}
+body{
+  overflow-x: hidden;
 }
 .product-card h1{
   font-size: 1.7rem;
@@ -379,12 +379,12 @@ body{
 }
 .block{
   width: 300px;
-  height: 75vh;
-  background-color: wheat;
+  height: 100vh;
+  background-color: darkcyan;
   position: absolute;
   top: 75px;
   z-index: 1000;
-  right: 20px;
+  right: 10px;
   border-radius: 10px;
   padding: 10px;
 }
@@ -395,14 +395,15 @@ body{
 }
 .block ul li{
   width: 100%;
-  padding: 20px;
+  padding: 35px;
   background-color: white;
   list-style: none;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   font-size: 1.3rem;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   cursor: pointer;
   border-radius: 10px;
+  font-size: 1.5rem;
 }
 .home-text h1{
   /* color: seagreen; */

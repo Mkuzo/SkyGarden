@@ -28,7 +28,9 @@ export default function Product(){
            if(secondSum === false){
             setStore(function(pre){
                 return([...pre,e])
-           })
+           }
+             )
+           alert("Added To Cart")
            }else{
             alert('Already Exits')
            }
@@ -37,6 +39,7 @@ export default function Product(){
         console.log("Second Sum",secondSum)
         }else{
             setStore([e])
+            alert("Added To Cart")
         }
     }
     console.log('store',store)

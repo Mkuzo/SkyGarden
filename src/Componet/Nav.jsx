@@ -1,8 +1,11 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { useContext } from "react"
+import { context } from "../App"
 export default function Nav(){
     const navigate = useNavigate()
     const [show,setShow] = useState(false)
+    const {store,setStore} = useContext(context)
     function showing(){
         if(show === false){
             setShow(true)
@@ -46,7 +49,7 @@ export default function Nav(){
                     <div className="links">
                         <ul>
                             <li>Login</li>
-                            <li onClick={handleCart}>Cart</li>
+                            <li onClick={handleCart}>Cart <span>{store.length}</span></li>
                         </ul>
                     </div>
                 </div>

@@ -12,8 +12,10 @@ export const context = createContext()
 function App() {
   const [count, setCount] = useState(0)
   const [store,setStore] = useState([])
+  const  [search,setSearch] = useState('')
+  const [storeSearch,setStoreSearch] = useState([])
   useEffect(function(){
-    if(store.length>0){
+    if(store.length > 0){
       localStorage.setItem('storing',JSON.stringify(store))
     }
   },[store])
@@ -29,7 +31,7 @@ function App() {
   },[])
   return (
     <>
-      <context.Provider value={{store,setStore}}>
+      <context.Provider value={{store,setStore,search,setSearch,setStoreSearch,storeSearch}}>
         <Nav></Nav>
         <AppRoute></AppRoute>
       </context.Provider>

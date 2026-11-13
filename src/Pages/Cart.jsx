@@ -46,7 +46,7 @@ export default function Cart(){
     return(
         <div>
             <div className="product-container">
-                {store.map(function(res){
+                {store && store.map(function(res){
                     return(
                         <div className="product-card" key={res.id}>
                             <div className="product-image">

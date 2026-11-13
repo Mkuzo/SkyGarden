@@ -29,8 +29,12 @@ import React from "react";
 import SliderModule from "react-slick";
 const Slider = SliderModule.default || SliderModule;
 import { useNavigate } from 'react-router-dom'
+import { useContext } from 'react'
+import { context } from '../App'
+import { useEffect,useState } from 'react'
 // import nairobi from '../assets/nairobi.jpg'
 export default function Home(){
+    const {store,setStore,search,setSearch,setStoreSearch,storeSearch} = useContext(context)
     const navigate = useNavigate()
     function handleProduct(e){
         navigate('/Product',{state:e})
@@ -64,6 +68,7 @@ export default function Home(){
         text :"Get Your Best Quality Items"
     }
   ]
+  
     const data  = [
         {   id:1,
             categorie:"Home & Funiture",
@@ -131,6 +136,17 @@ export default function Home(){
             product:[{id:1,name:"Large Appliances", price:500,image:image3}]
         }, 
     ]
+    useEffect(function(){
+        if(search){
+            const searchItem = data.filter(function(res){
+                return (res.categorie.includes(search))
+            })
+            setStoreSearch(searchItem)
+            console.log('data',data)
+            console.log('search',search)
+            console.log('searched Item',searchItem)
+        }
+    },[search])
     return(
         <div>
              <Slider {...settings} className="slider">

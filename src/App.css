@@ -319,6 +319,14 @@
   background-color: transparent;
   color: black;
 }
+body{
+  overflow: hidden;
+}
+.slider{
+  width: 100vw;
+  height: auto;
+  /* background-color: red; */
+}
 .product-card h1{
   font-size: 1.7rem;
 }
@@ -395,6 +403,10 @@
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   cursor: pointer;
   border-radius: 10px;
+}
+.home-text h1{
+  /* color: seagreen; */
+  color: coral;
 }
 @media screen and (max-width: 675px) {
   .smaller-device{

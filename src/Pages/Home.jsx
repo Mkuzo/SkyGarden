@@ -22,6 +22,12 @@ import product8 from '../assets/product8.jpg'
 import product9 from '../assets/product9.jpg'
 import product10 from '../assets/product10.jpg'
 import product11 from '../assets/product11.jpg'
+import nairobi2 from '../assets/nairobi2.jpg'
+import nairobi3 from '../assets/nairobi3.jpg'
+import React from "react";
+// import Slider from "react-slick";
+import SliderModule from "react-slick";
+const Slider = SliderModule.default || SliderModule;
 import { useNavigate } from 'react-router-dom'
 // import nairobi from '../assets/nairobi.jpg'
 export default function Home(){
@@ -30,6 +36,34 @@ export default function Home(){
         navigate('/Product',{state:e})
         console.log(e)
     }
+
+// export default function SimpleSlider() {
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    // auto:play
+    autoplay: true,
+    autoplaySpeed: 3000,
+    // speed: 500,
+  };
+  const newArra = [
+    {
+        id:1,
+        image: nairobi,
+        text: "Same Day Delivery On Nairobi Order"
+    },{
+        id: 2,
+        image: nairobi2,
+        text: "Best Quality Items"
+    },{
+        id:3,
+        image: nairobi3,
+        text :"Get Your Best Quality Items"
+    }
+  ]
     const data  = [
         {   id:1,
             categorie:"Home & Funiture",
@@ -99,17 +133,24 @@ export default function Home(){
     ]
     return(
         <div>
-            <div className="banner">
-                <img src={nairobi} alt="" />
-                <div className="cover">
-                    <div className="home-banner">
-                        <div className="home-text">
-                            <h1>Same Day Delivery On Nairobi Order</h1>
-                            <button>Read Who We Are</button>
+             <Slider {...settings} className="slider">
+                {newArra.map(function(product){
+                    return(
+                        <div className="banner" key={product.id}>
+                            <img src={product.image} alt="" />
+                            <div className="cover">
+                                <div className="home-banner">
+                                    <div className="home-text">
+                                        <h1>{product.text}</h1>
+                                        <button>Read Who We Are</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
+                    )
+                })}
+        {/* <div></div> */}
+             </Slider>
             <h1 className='h1'>Shop Categorie</h1>
             <div className="home-categorie">
                 {data.map(function(res){
